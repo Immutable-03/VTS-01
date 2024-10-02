@@ -1,0 +1,116 @@
+/* Main header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eaeaea;
+  background-color: white;
+  position: relative;
+}
+
+/* Logo container */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+nav a.active{
+  color: #20b8b8;
+  font-weight: bold;
+}
+
+/* Logo image */
+.logoImage {
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* Navigation links - by default visible for desktop */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: RGBA(113, 196, 173, 0.8);
+  text-decoration-thickness: 2px;
+  
+}
+/* Set text-decoration color to black and adjust thickness */
+
+
+/* Hamburger menu button hidden on larger screens */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hamburger icon */
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Close icon styling */
+.closeIcon {
+  position: relative;
+  top: 8px;
+  right: -144px;
+  font-size: 40px;
+  color: #0a0a0a;
+ 
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  /* Hide navigation links by default for mobile */
+  .nav {
+    position: relative; /* Change from absolute to relative */
+    top: 0; /* Remove the top offset */
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Adjust the height of the header when menu is open */
+  .header.open {
+    flex-direction: column; /* Stack the header content vertically */
+    height: auto; /* Allow the header to expand */
+  }
+
+  /* Show navigation when menu is open */
+  .nav.open {
+    display: flex;
+  }
+
+  /* Show hamburger menu button for mobile */
+  .menuButton {
+    display: block;
+  }
+
+  /* Logo container in mobile view */
+  .logoContainer {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

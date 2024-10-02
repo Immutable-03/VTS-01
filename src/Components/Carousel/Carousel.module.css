@@ -1,0 +1,146 @@
+.carousel {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: rgba(146, 197, 197, 0.87);
+}
+
+.imageContainer {
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+.cardContainer {
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 80%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(144, 238, 144, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80%;
+  opacity: 0.5;
+  transition: opacity 3s ease-in-out;
+}
+
+.cardRight {
+  right: 60%;
+}
+
+.cardLeft {
+  left: 70%;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.linkButton {
+  position: absolute;
+  bottom: 10%;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 3s ease-in-out;
+}
+
+.buttonRight {
+  right: 10%;
+}
+
+.buttonLeft {
+  left: 10%;
+}
+
+.prevButton {
+  left: 30px;
+}
+
+.nextButton {
+  right: 30px;
+}
+
+/* Media Queries */
+/* Media Queries */
+@media (max-width: 768px) {
+  .carousel {
+    height: 60vh;
+  }
+  .imageContainer {
+    width: 100%;
+  }
+  .cardContainer {
+    width: 80%; /* Adjust as needed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto; /* Allow auto height */
+    display: flex; /* Center the content vertically */
+    justify-content: center; /* Center horizontally */
+  }
+  .card {
+    font-size: 14px;
+    width: 100%; /* Full width for mobile */
+    opacity: 0.9; /* Adjust opacity if needed */
+    padding: 10px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 50vh;
+  }
+  .cardContainer {
+    width: 50%; /* Adjust for smaller screens */
+    height: auto; /* Allow auto height */
+  }
+  .card {
+    font-size: 12px;
+    padding: 8px; /* Smaller padding */
+  }
+  .linkButton {
+    font-size: 10px;
+  }
+}

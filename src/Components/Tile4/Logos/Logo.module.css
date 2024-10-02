@@ -1,0 +1,78 @@
+
+
+.scroller {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust height as needed */
+  border: 1px solid #ccc;
+}
+
+.scrollArea {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+/* Styling each logo image */
+.logoImage {
+  margin: 0 15px;
+  height: 100px; /* Default for desktop */
+  width: auto; /* Maintain the aspect ratio of the logos */
+  transition: transform 0.1s ease;
+}
+
+/* Hover effect */
+.logoImage:hover {
+  transform: scale(1.2); /* Enlarge slightly on hover */
+}
+
+/* Mobile View (max width: 600px) */
+@media (max-width: 600px) {
+  .scroller {
+    height: 150px; /* Reduce container height for mobile */
+  }
+
+  .scrollArea {
+    justify-content: space-between; /* Adjust spacing for mobile */
+  }
+
+  .logoImage {
+    height: 60px; /* Reduce logo size for mobile */
+    margin: 0 10px; /* Reduce margin between logos */
+  }
+}
+
+/* Tablet View (min-width: 601px) and (max-width: 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .scroller {
+    height: 180px; /* Adjust container height for tablets */
+  }
+
+  .scrollArea {
+    justify-content: space-around; /* Adjust spacing for tablets */
+  }
+
+  .logoImage {
+    height: 80px; /* Adjust logo size for tablets */
+    margin: 0 12px; /* Adjust margin between logos */
+  }
+}
+
+/* Desktop View (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .scroller {
+    height: 200px; /* Default height for desktop */
+  }
+
+  .scrollArea {
+    justify-content: space-evenly; /* Default spacing for desktop */
+  }
+
+  .logoImage {
+    height: 100px; /* Default logo size for desktop */
+    margin: 0 15px; /* Default margin between logos */
+  }
+}

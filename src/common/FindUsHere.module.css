@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+.finduscontainer{
+    background-color: rgba(113, 196, 173, 0.5);
+}
+.heading p{
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 500;
+}

@@ -1,0 +1,130 @@
+/* Desktop View Styles */
+.container {
+  margin: 0;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1.5fr;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(135deg, #d1f2eb 0%, #c2e9fb 100%); /* Gradient background */
+}
+
+.leftContent {
+  text-align: center;
+  padding: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease-out 0.5s, transform 1s ease-out 0.5s; /* Reduced delay */
+  font-family: 'Helvetica, Arial, sans-serif'; /* Clear font family */
+  color: #2c3e50; /* Darker text for better visibility */
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rightImages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for desktop */
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  min-height: 300px; /* Fixed height for the card */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.cardBackground {
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Ensure the card fills the height */
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 102, 99, 0.85); /* Increased opacity for better contrast */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, background 0.3s ease; /* Add background transition */
+  opacity: 0.7; /* Ensure the overlay is more opaque */
+}
+
+.card:hover .cardOverlay {
+  transform: translateY(0);
+  background: rgba(18, 102, 99, 0.95); /* Even darker on hover for better text visibility */
+}
+
+.cardHeading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  transition: transform 0.6s ease;
+  transform: translateX(100%);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Slightly stronger text shadow for better readability */
+}
+
+.cardBody {
+  font-size: 16px;
+  max-width: 80%;
+  transition: transform 0.6s ease;
+  transform: translateX(-100%);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for body text */
+}
+
+/* Link Styles */
+.cardBody a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cardBody a:hover {
+  color: lightgray;
+}
+
+.card:hover .cardHeading {
+  transform: translateX(0);
+}
+
+.card:hover .cardBody {
+  transform: translateX(0);
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    height: auto; /* Allow height to adjust */
+    background: linear-gradient(135deg, #d1f2eb 0%, #c2e9fb 100%); /* Mobile gradient */
+  }
+
+  .leftContent {
+    width: 100%; /* Full width for left content */
+    padding: 10px; /* Padding for left content */
+  }
+
+  .rightImages {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    width: 100%; /* Ensure full width */
+  }
+
+  .card {
+    width: 100%; /* Full width for cards */
+    min-height: 300px; /* Maintain height */
+  }
+}

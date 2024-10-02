@@ -1,0 +1,64 @@
+/* components/ContactInfo.module.css */
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+ 
+    background-color:  RGBA(113, 196, 173, 0.8); /* Light background for a cleaner look */
+    border-bottom: 1px solid #dee2e6; /* Subtle border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.contactHeader {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 800px; /* Increased width for more space */
+}
+
+.contactItem {
+     color:white;
+     font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-right: 50px; /* Space between items */
+}
+
+.contactItem i {
+    font-size: 20px; /* Larger icon size */
+    color: #007bff; /* Bootstrap primary color */
+    margin-right: 11px; /* Space between icon and text */
+}
+
+.link {
+    color:white;
+    font-size: 15px; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color:white;
+    font-size: 15px; /* Darker color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+ 
+
+    .contactHeader {
+        flex-direction: column; /* Stack items on mobile */
+        align-items: flex-end; /* Align to the left */
+    }
+
+    .contactItem {
+        margin-right: 20px;
+       
+    }
+
+    /* Hide phone number on mobile */
+    .contactItem:first-child {
+        display: none; /* Hide the phone item */
+    }
+}
